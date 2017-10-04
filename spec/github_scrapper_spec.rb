@@ -8,7 +8,7 @@ describe GithubScrapperApi do
 
   describe 'PUT job' do
     before do
-      ScrappJob.stub_chain(:new, :async, :perform).and_return(nil)
+      ScrappJob.stub_chain(:new, :async, :perform) { nil }
     end
 
     subject { put 'job/login', mock_params }
